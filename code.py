@@ -92,7 +92,8 @@ def random_circles(grp, ncircles, color=BLACK):
                    random.randint(4,50),fill=fill,outline=color))
 
 def corner_curliecues(grp):
-    # Display a curly graphic from root directory of the CIRCUITPY drive
+    # Display a curly graphic from root directory of the CIRCUITPY drive. Graphic is displayed
+    # four times - rotated in each corner
     f = open("image.bmp", "rb")
     pic = displayio.OnDiskBitmap(f)
     #Create a Tilegrid with the bitmap and put in the displayio group
@@ -113,6 +114,7 @@ def corner_curliecues(grp):
     grp.append(topright)
     grp.append(botright)
 
+#change the text displayed and try to center it
 def set_text(txt_area, text):
     txt_area.text = text
     box = txt_area.bounding_box
